@@ -28,7 +28,7 @@ function getRandomIndex(max) {
       let newFoxy = `<div class="carousel-item active">
       <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
       <div class="carousel-caption d-none d-md-block">
-      <button onclick="getFoxyQuote" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
+      <button onclick="getFoxyQuote(${random.getFoxyQuote})" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
       <p id="affirmation">${random.text}</p>
       <p id="author">${random.author}</p>
       </div>

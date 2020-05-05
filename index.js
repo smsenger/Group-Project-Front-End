@@ -1,5 +1,6 @@
 
-
+//nasa api key = yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf
+//use like this: https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf
 
 const settings = {
   "async": true,
@@ -14,30 +15,69 @@ function getRandomIndex(max) {
 }
 
 
+function getSpace() {
+  $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
+    .then(function(data2) {
+      const img = document.getElementsByTagName('img')[0];
+      console.log('data =', data2)
+      img.setAttribute('src', data2.url)
+      let random = data[getRandomIndex(data.length)]
+
+    }); 
+  }; 
+  getSpace()
+
+
+function getCats() {
+  $.get('http://aws.random.cat/meow')
+    .then(function(data2) {
+      const img = document.getElementsByTagName('img')[0];
+      console.log('data =', data2)
+      img.setAttribute('src', data2.file)
+    }); 
+  }; 
+  // getCats()
+
+
+
+function renderQuote(quoteData) {
+  $('#affirmation').text(quoteData.text)
+  if (quoteData.author == null) {
+    $("#author").text("Unknown");
+  }
+  else {
+    $('#author').text(quoteData.author)
+    
+  };
+  console.log(quoteData)
+}
 
 
 // $(function () {
   const getFoxyQuote = function() {
-    $('#click-quote').html('Get me another!')   //need button text to change, button still on screen
+    $('#click-quote').html('Get me another!')   
     $.get(settings).then(function (response) {
       let data = JSON.parse(response);
       let random = data[getRandomIndex(data.length)]
-      console.log(random);
-      console.log(random.text);
-      console.log(random.author)
-      let newFoxy = `<div class="carousel-item active">
-      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
-      <div class="carousel-caption d-none d-md-block">
-      <button onclick="getFoxyQuote" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
-      <p id="affirmation">${random.text}</p>
-      <p id="author">${random.author}</p>
-      </div>
-      </div>`
-      $('.carousel-inner').html("")
-      $('.carousel-inner').append(newFoxy) 
+      renderQuote(random);
+      
     });
   }
-  $('#click-quote').click(getFoxyQuote);
+
+function startSong() {
+  document.querySelectorAll('button')[0].click();
+  document.querySelectorAll('button')[1].click();
+  }
+  
+
+
+  $('#click-quote').click(function () {
+    getFoxyQuote()
+    getCats();
+    startSong();
+  });
+
+
 // });
 
 
@@ -45,14 +85,7 @@ function getRandomIndex(max) {
 
 
 
-  // if(data == null) {
-  //   data = [];
-  //   data.push(response);
-  //   data = JSON.stringify(response) //this is starter for saving a list of favorite quotes
-  //   console.log(data)
-  //   localStorage.setItem(data)
 
-//       });
 
 //chuck norris quote generator
 // $(document).ready(function() {

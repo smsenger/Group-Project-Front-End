@@ -42,7 +42,14 @@ function getCats() {
 
 function renderQuote(quoteData) {
   $('#affirmation').text(quoteData.text)
-  $('#author').text(quoteData.author)
+  if (quoteData.author == null) {
+    $("#author").text("Unknown");
+  }
+  else {
+    $('#author').text(quoteData.author)
+    
+  };
+  console.log(quoteData)
 }
 
 
@@ -57,17 +64,17 @@ function renderQuote(quoteData) {
     });
   }
 
-function changeSong() {
-  document.querySelectorAll('[title=Next]')[0].click();
-  // document.querySelectorAll('.c5.c6.bi.c7.c8.c9.bf.ca.cb')[1].click()
- 
-}
+function startSong() {
+  document.querySelectorAll('button')[0].click();
+  document.querySelectorAll('button')[1].click();
+  }
+  
 
 
   $('#click-quote').click(function () {
     getFoxyQuote()
     getCats();
-    changeSong();
+    startSong();
   });
 
 

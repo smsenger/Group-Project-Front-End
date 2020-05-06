@@ -9,53 +9,35 @@ const settings = {
   "method": "GET"
 }
 
+let quotes = []
+
 
 function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-  if (author == 'null') {
-    return "Unknown"
-  }
-  else {
-    return author;
-  };
   
-
-  function renderQuote(quoteData) {
-    let newFoxy = `<div class="carousel-item active">
-      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
-      <div class="carousel-caption d-none d-md-block">
-      <button onclick="getFoxyQuote()" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
-      <p id="affirmation">${quoteData.text}</p>
-      <p id="author">${quoteData.author}</p>
-      </div>
-      </div>`
-    $('.carousel-inner').html("")
-    $('.carousel-inner').append(newFoxy)
-
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
-    .then(function(data2) {
+    .then(function (data2) {
       const img = document.getElementsByTagName('img')[0];
       console.log('data =', data2)
       img.setAttribute('src', data2.url)
-      let random = data[getRandomIndex(data.length)]
 
-    }); 
-  }; 
-  getSpace()
+    });
+};
+
 
 
 function getCats() {
   $.get('http://aws.random.cat/meow')
-    .then(function(data2) {
+    .then(function (data2) {
       const img = document.getElementsByTagName('img')[0];
       console.log('data =', data2)
       img.setAttribute('src', data2.file)
-    }); 
-  }; 
-  // getCats()
+    });
+};
+
 
 
 
@@ -66,40 +48,43 @@ function renderQuote(quoteData) {
   }
   else {
     $('#author').text(quoteData.author)
-    
+
   };
   console.log(quoteData)
 }
 
-  }
 
 
-  // $(function () {
-  const getFoxyQuote = function () {
-    $('#click-quote').html('Get me another!')   //need button text to change, button still on screen
-    $.get(settings).then(function (response) {
-      let data = JSON.parse(response);
-      let random = data[getRandomIndex(data.length)]
-      renderQuote(random);
+const getFoxyQuote = function () {
+  $('#click-quote').html('Get me another!')
+  let random = quotes[getRandomIndex(quotes.length)]
+  renderQuote(random);
 
-    });
-  }
+}
 
 function startSong() {
   document.querySelectorAll('button')[0].click();
   document.querySelectorAll('button')[1].click();
-  }
+}
+
+$(document).ready( () => {
+  $.get(settings).then(function (response) {
+    const data = JSON.parse(response);
+    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
+    console.log(data);
+    quotes = removeTrump
+    console.log(quotes);
+
+  });
+  getSpace()
   
-
-
   $('#click-quote').click(function () {
     getFoxyQuote()
     getCats();
     startSong();
   });
+})
 
-
-// });
 
 
 
@@ -121,20 +106,4 @@ function startSong() {
 //     });
 
 
-
-
-
-
-// $(function () {
-//   $('#click-quote').click(function () {
-//     console.log("You clicked!");
-//     $.ajax(settings).done(function (response) {
-//         const data = JSON.parse(response);
-//         console.log(data);
-//         $("#affirmation").text(data[0]);
-//         console.log("again")
-//       });
-
-//   });
-// });
 

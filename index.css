@@ -27,3 +27,9 @@ p {
 #middle-format {
     margin-left: 30vw;
 }
+
+
+#affirmation, 
+#author {
+    color: black;
+}

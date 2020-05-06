@@ -52,7 +52,9 @@
     position: fixed;
 } */
 
-
+.myContainer {
+    margin-top: -100px;
+}
 .head-text {
     font-size: 120px;
 }

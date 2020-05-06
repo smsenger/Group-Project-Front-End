@@ -48,14 +48,41 @@ const getQuote = function () {
     const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
     let random = data[getRandomIndex(data.length)]
     renderQuote(random);
+  })
+};
 
-  });
+
+const getFoxyQuote = function () {
+  $('#click-quote').html('Get me another!')
+  let random = quotes[getRandomIndex(quotes.length)]
+  renderQuote(random);
+
 }
 
-// function startSong() {
-//   document.querySelectorAll('button')[0].click();
-//   document.querySelectorAll('button')[1].click();
-//   }
+function startSong() {
+  document.querySelectorAll('button')[0].click();
+  document.querySelectorAll('button')[1].click();
+}
+
+$(document).ready( () => {
+  $.get(settings).then(function (response) {
+    const data = JSON.parse(response);
+    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
+    console.log(data);
+    quotes = removeTrump
+    console.log(quotes);
+
+  });
+  getSpace()
+  
+  $('#click-quote').click(function () {
+    getFoxyQuote()
+    getCats();
+    startSong();
+  });
+})
+
+
 
 
 

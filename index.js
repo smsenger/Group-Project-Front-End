@@ -1,7 +1,3 @@
-
-//nasa api key = yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf
-//use like this: https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf
-
 const settings = {
   "async": true,
   "crossDomain": true,
@@ -9,37 +5,29 @@ const settings = {
   "method": "GET"
 }
 
-let quotes = []
-
+let quotes = [];
 
 function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-  
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
     .then(function (data2) {
-      const img = document.getElementsByTagName('img')[0];
+      const img = document.getElementsByTagName('img')[2];
       console.log('data =', data2)
       img.setAttribute('src', data2.url)
-
     });
 };
-
-
 
 function getCats() {
   $.get('http://aws.random.cat/meow')
     .then(function (data2) {
-      const img = document.getElementsByTagName('img')[0];
+      const img = document.getElementsByTagName('img')[1];
       console.log('data =', data2)
       img.setAttribute('src', data2.file)
     });
 };
-
-
-
 
 function renderQuote(quoteData) {
   $('#affirmation').text(quoteData.text)
@@ -53,6 +41,15 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
+const getQuote = function () {
+  $('#click-quote').html('Get me another!')
+  $.get(settings).then(function (response) {
+    let data = JSON.parse(response);
+    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
+    let random = data[getRandomIndex(data.length)]
+    renderQuote(random);
+  })
+};
 
 
 const getFoxyQuote = function () {
@@ -89,21 +86,26 @@ $(document).ready( () => {
 
 
 
+$('#click-quote').click(function () {
+  getQuote()
+  getCats();
+  getSpace();
+  // startSong();
+});
 
 
 
 
 //chuck norris quote generator
-// $(document).ready(function() {
+// $(document).ready(function () {
 //   let chuckNorris = "https://api.icndb.com/jokes/random";
-//   $("button").on("click", function(){
-//      $("button").html("Another amazing quote!");
-//      $.getJSON(chuckNorris, function(json) {
-//        $("#affirmation").html("<em>\""+json.value.joke+"\"</em>").addClass("animated bounceIn");
-//      });
-//       });
-
+//   $("button").on("click", function () {
+//     $("button").html("Another amazing quote!");
+//     $.getJSON(chuckNorris, function (json) {
+//       $("#affirmation").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
 //     });
+//   });
 
+// });
 
 

@@ -43,26 +43,14 @@ function renderQuote(quoteData) {
 
 const getQuote = function () {
   $('#click-quote').html('Get me another!')
-  $.get(settings).then(function (response) {
-    let data = JSON.parse(response);
-    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
-    let random = data[getRandomIndex(data.length)]
-    renderQuote(random);
-  })
-};
-
-
-const getFoxyQuote = function () {
-  $('#click-quote').html('Get me another!')
   let random = quotes[getRandomIndex(quotes.length)]
   renderQuote(random);
-
 }
 
-function startSong() {
-  document.querySelectorAll('button')[0].click();
-  document.querySelectorAll('button')[1].click();
-}
+// function startSong() {
+//   document.querySelectorAll('button')[0].click();
+//   document.querySelectorAll('button')[1].click();
+// }
 
 $(document).ready( () => {
   $.get(settings).then(function (response) {
@@ -73,39 +61,30 @@ $(document).ready( () => {
     console.log(quotes);
 
   });
-  getSpace()
   
   $('#click-quote').click(function () {
-    getFoxyQuote()
+    getQuote()
     getCats();
-    startSong();
+    // startSong();
+  });
+
+  $('#space-quote').click(function () {
+    getSpace()
+  });
+  
+  // chuck norris quote generator
+  $(document).ready(function () {
+    let chuckNorris = "https://api.icndb.com/jokes/random";
+    $("#click-chuck").on("click", function () {
+      $("click-chuck").html("Chun Kuk Do!");
+      $.getJSON(chuckNorris, function (json) {
+        $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
+      });
+    });
+  
   });
 })
 
 
-
-
-
-$('#click-quote').click(function () {
-  getQuote()
-  getCats();
-  getSpace();
-  // startSong();
-});
-
-
-
-
-//chuck norris quote generator
-// $(document).ready(function () {
-//   let chuckNorris = "https://api.icndb.com/jokes/random";
-//   $("button").on("click", function () {
-//     $("button").html("Another amazing quote!");
-//     $.getJSON(chuckNorris, function (json) {
-//       $("#affirmation").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
-//     });
-//   });
-
-// });
 
 

@@ -14,6 +14,25 @@ function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+  if (author == 'null') {
+    return "Unknown"
+  }
+  else {
+    return author;
+  };
+  
+
+  function renderQuote(quoteData) {
+    let newFoxy = `<div class="carousel-item active">
+      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
+      <div class="carousel-caption d-none d-md-block">
+      <button onclick="getFoxyQuote()" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
+      <p id="affirmation">${quoteData.text}</p>
+      <p id="author">${quoteData.author}</p>
+      </div>
+      </div>`
+    $('.carousel-inner').html("")
+    $('.carousel-inner').append(newFoxy)
 
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
@@ -52,15 +71,17 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
+  }
 
-// $(function () {
-  const getFoxyQuote = function() {
-    $('#click-quote').html('Get me another!')   
+
+  // $(function () {
+  const getFoxyQuote = function () {
+    $('#click-quote').html('Get me another!')   //need button text to change, button still on screen
     $.get(settings).then(function (response) {
       let data = JSON.parse(response);
       let random = data[getRandomIndex(data.length)]
       renderQuote(random);
-      
+
     });
   }
 
@@ -96,26 +117,10 @@ function startSong() {
 //        $("#affirmation").html("<em>\""+json.value.joke+"\"</em>").addClass("animated bounceIn");
 //      });
 //       });
-  
+
 //     });
 
 
-
-
-
-
-
-
-
-
-
-//THIS API DOES NOT WORK
-// const settings = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://www.affirmations.dev",  //throws error: Access to XMLHttpRequest at 'https://www.affirmations.dev/' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-//   "method": "GET"
-// }
 
 
 

@@ -16,7 +16,7 @@ function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-
+  
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
     .then(function (data2) {
@@ -37,7 +37,7 @@ function getCats() {
       img.setAttribute('src', data2.file)
     });
 };
-// getCats()
+
 
 
 
@@ -54,7 +54,7 @@ function renderQuote(quoteData) {
 }
 
 
-// $(function () {
+
 const getFoxyQuote = function () {
   $('#click-quote').html('Get me another!')
   let random = quotes[getRandomIndex(quotes.length)]
@@ -86,8 +86,6 @@ $(document).ready( () => {
 })
 
 
-// });
-
 
 
 
@@ -108,36 +106,4 @@ $(document).ready( () => {
 //     });
 
 
-
-
-
-
-
-
-
-
-
-//THIS API DOES NOT WORK
-// const settings = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://www.affirmations.dev",  //throws error: Access to XMLHttpRequest at 'https://www.affirmations.dev/' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-//   "method": "GET"
-// }
-
-
-
-
-// $(function () {
-//   $('#click-quote').click(function () {
-//     console.log("You clicked!");
-//     $.ajax(settings).done(function (response) {
-//         const data = JSON.parse(response);
-//         console.log(data);
-//         $("#affirmation").text(data[0]);
-//         console.log("again")
-//       });
-
-//   });
-// });
 

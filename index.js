@@ -13,32 +13,44 @@ function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+  if (author == 'null') {
+    return "Unknown"
+  }
+  else {
+    return author;
+  };
+  
+
+  function renderQuote(quoteData) {
+    let newFoxy = `<div class="carousel-item active">
+      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
+      <div class="carousel-caption d-none d-md-block">
+      <button onclick="getFoxyQuote()" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
+      <p id="affirmation">${quoteData.text}</p>
+      <p id="author">${quoteData.author}</p>
+      </div>
+      </div>`
+    $('.carousel-inner').html("")
+    $('.carousel-inner').append(newFoxy)
 
 
+  }
 
-// $(function () {
-  const getFoxyQuote = function() {
+
+  // $(function () {
+  const getFoxyQuote = function () {
     $('#click-quote').html('Get me another!')   //need button text to change, button still on screen
     $.get(settings).then(function (response) {
       let data = JSON.parse(response);
       let random = data[getRandomIndex(data.length)]
-      console.log(random);
-      console.log(random.text);
-      console.log(random.author)
-      let newFoxy = `<div class="carousel-item active">
-      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
-      <div class="carousel-caption d-none d-md-block">
-      <button onclick="getFoxyQuote(${random.getFoxyQuote})" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
-      <p id="affirmation">${random.text}</p>
-      <p id="author">${random.author}</p>
-      </div>
-      </div>`
-      $('.carousel-inner').html("")
-      $('.carousel-inner').append(newFoxy) 
+      renderQuote(random)
+
     });
   }
   $('#click-quote').click(getFoxyQuote);
 // });
+
+
 
 
 
@@ -63,7 +75,7 @@ function getRandomIndex(max) {
 //        $("#affirmation").html("<em>\""+json.value.joke+"\"</em>").addClass("animated bounceIn");
 //      });
 //       });
-  
+
 //     });
 
 

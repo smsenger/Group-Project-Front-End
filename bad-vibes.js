@@ -1,4 +1,5 @@
 const randomImage = document.querySelector('.random-images');
+const randomJoke = document.querySelector('.joke');
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -13,3 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 2000);
     }); 
 });
+
+
+const dadJokes = "https://official-joke-api.appspot.com/random_ten";
+$('#click-joke') .click(function(){
+  $.get(dadJokes) 
+  .then(response => {
+      randomJoke.textContent = (`${response[0].setup} ${response[0].punchline}`);
+      console.log(response);
+  
+  
+  })});

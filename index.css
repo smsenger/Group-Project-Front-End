@@ -4,16 +4,13 @@
 }
 
 
-.myContainer {
+#myContainer {
     margin-top: -100px;
     margin-bottom: 15vh;
-    background-image: url('confetti.jpg');
+    background-color: #f4daff;
     background-size: 100%;
 }
 
-footer {
-    background-image: url('confetti.jpg');
-}
 
 .head-text {
     font-size: 120px;
@@ -27,8 +24,10 @@ footer {
 #click-quote, 
 #space-quote, 
 #click-chuck {
-    background-color: #366383;
+    background-color: #41708c;
     color: white;
+    font-weight: bold;
+    border-radius: 2em;
 }
 
 .topContainer {
@@ -39,9 +38,15 @@ footer {
 }
 
 .kittyCard {
-    margin-left: 4vw;
-    margin-right: 2vw;
+
+    margin-left: 2vw;
     height: 780px;
+    border: 2px solid white;
+    border-radius: 2em;
+}
+
+#kittyPic {
+    border-radius: 2em;
 }
 
 #affirmation {
@@ -52,8 +57,13 @@ footer {
 }
  
 .spaceCard {
-    margin-right: 2vw;
     height: 780px;
+    border: 2px solid white;
+    border-radius: 2em;
+}
+
+#spaceImage {
+    border-radius: 2em;
 }
 
 .space-place {
@@ -61,15 +71,40 @@ footer {
 }
 
 #spotifyPlayer {
-    margin-right: 2vw;
+
     height: 780px;
+    border: 2px solid white;
+    border-radius: 3em;
 }
+
+.spotifyPlayer {
+
+    height: 780px;
+    border: 2px solid white;
+    border-radius: 5em;
+}
+
+.corner-wrapper {
+    display: block;
+    overflow: hidden;
+    width: 350px;
+    height: 780px;
+    border-radius: 20px;
+    transform: translateZ(0px);
+    border: 2px solid #eee;
+  }
+  
 
 .chuckCard {
     margin-right: 2vw;
     height: 780px;
+    border: 2px solid white;
+    border-radius: 2em;
 }
 
+#chuckPic {
+    border-radius: 2em;
+}
 #chuck-text {
     height: 30%;
     overflow: scroll;

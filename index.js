@@ -43,6 +43,13 @@ function renderQuote(quoteData) {
 
 const getQuote = function () {
   $('#click-quote').html('Get me another!')
+  let random = data[getRandomIndex(data.length)]
+  renderQuote(random);
+}
+
+
+const getFoxyQuote = function () {
+  $('#click-quote').html('Get me another!')
   let random = quotes[getRandomIndex(quotes.length)]
   renderQuote(random);
 }
@@ -52,7 +59,7 @@ const getQuote = function () {
 //   document.querySelectorAll('button')[1].click();
 // }
 
-$(document).ready( () => {
+$(document).ready(() => {
   $.get(settings).then(function (response) {
     const data = JSON.parse(response);
     const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
@@ -61,12 +68,13 @@ $(document).ready( () => {
     console.log(quotes);
 
   });
-  
+
   $('#click-quote').click(function () {
     getQuote()
     getCats();
     // startSong();
   });
+
 
   $('#space-quote').click(function () {
     getSpace()

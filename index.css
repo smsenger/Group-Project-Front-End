@@ -1,8 +1,6 @@
-
 * {
     font-family: 'Dancing Script', cursive;
 }
-
 
 #myContainer {
     margin-top: -100px;
@@ -10,7 +8,6 @@
     background-color: #f4daff;
     background-size: 100%;
 }
-
 
 .head-text {
     font-size: 120px;
@@ -38,7 +35,6 @@
 }
 
 .kittyCard {
-
     margin-left: 2vw;
     height: 780px;
     border: 2px solid white;
@@ -53,7 +49,6 @@
     background-color: white;
     height: 30%;
     overflow: scroll;
-    
 }
  
 .spaceCard {
@@ -94,7 +89,6 @@
     border: 2px solid #eee;
   }
   
-
 .chuckCard {
     margin-right: 2vw;
     height: 780px;
@@ -142,13 +136,12 @@ h5 {
 
 #spaceImage {
     height: 450px;
-  
 }
 
 #kittyPic {
     height: 450px;
-
 }
+
 #chuckPic {
     height: 450px;
 }
@@ -160,4 +153,28 @@ h5 {
 
 .head {
     text-align: left;
+}
+
+/* bad vibes */
+#myContainer2 {
+    margin-top: -50px;
+    margin-bottom: 15vh;
+    background-size: 100%;
+}
+
+.sadCard {
+    /* margin-left: 2vw; */
+    height: 780px;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+
+.corner-wrapper2 {
+    display: block;
+    overflow: hidden;
+    width: 350px;
+    height: 780px;
+    border-radius: 20px;
+    transform: translateZ(0px);
+    border: 2px solid black;
 }

@@ -41,11 +41,11 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
-const getQuote = function () {
-  $('#click-quote').html('Get me another!')
-  let random = data[getRandomIndex(data.length)]
-  renderQuote(random);
-}
+// const getQuote = function () {
+//   $('#click-quote').html('Get me another!')
+//   let random = data[getRandomIndex(data.length)]
+//   renderQuote(random);
+// }
 
 
 const getFoxyQuote = function () {
@@ -70,7 +70,7 @@ $(document).ready(() => {
   });
 
   $('#click-quote').click(function () {
-    getQuote()
+    getFoxyQuote()
     getCats();
     // startSong();
   });

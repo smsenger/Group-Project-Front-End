@@ -1,3 +1,6 @@
+
+///Sets sad image api to card
+
 function getSadImages() {
 $.get('https://api.unsplash.com/search/photos?page=1&per_page=30&query=sad&client_id=yE582Cx8y-xmBPW0X_zUDPFAaJ0KYPUQqmVOZ1cgEfY')
     .then(function (data3) {
@@ -7,6 +10,7 @@ $.get('https://api.unsplash.com/search/photos?page=1&per_page=30&query=sad&clien
     });
 };
 
+///Sets joke card api
 function getDadJokes() {
   $.get('https://official-joke-api.appspot.com/random_ten') 
   .then(function (data4) {

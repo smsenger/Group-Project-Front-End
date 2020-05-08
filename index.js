@@ -7,10 +7,12 @@ const settings = {
 
 let quotes = [];
 
+///Returns random quotes from api
 function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+///Sets space images from nasa api
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
     .then(function (data2) {
@@ -20,6 +22,7 @@ function getSpace() {
     });
 };
 
+///Sets cat image api attached to random quote card
 function getCats() {
   $.get('http://aws.random.cat/meow')
     .then(function (data2) {
@@ -29,6 +32,7 @@ function getCats() {
     });
 };
 
+///Quotes that have no author will now print as Unknown instead of null
 function renderQuote(quoteData) {
   $('#affirmation').text(quoteData.text)
   if (quoteData.author == null) {
@@ -41,13 +45,14 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
-
+///Adds click function to quotes
 const getFoxyQuote = function () {
   $('#click-quote').html('Get me another!')
   let random = quotes[getRandomIndex(quotes.length)]
   renderQuote(random);
 }
 
+///Adds Yoga translation to random quote api in the center card
 function quoteYoda() {
   $('#click-quote').html('Try more you will!')
   $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
@@ -58,6 +63,7 @@ function quoteYoda() {
     })
 }
 
+/// 
 $(document).ready(() => {
   $.get(settings).then(function (response) {
     const data = JSON.parse(response);

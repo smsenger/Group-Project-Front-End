@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="bad-vibes.css" rel="stylesheet" type="text/css" />
-    <!-- jquery js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
-    <title>badVibesOnly</title>
-  </head>
-
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="bad-vibes.css" rel="stylesheet" type="text/css" />
+  <!-- jquery js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <title>badVibesOnly</title>
+</head>
   <body class=bodyBadVibes background="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif">
     <!-- link back to goodvibes page -->
     <ul class="top-right nav justify-content-center" style="width: 100vw;">
@@ -30,11 +29,8 @@
       </div>
     </div>
 
-    <!-- container with cards and form -->
-    <div class="container">
-      <div class="Container" id="myContainer2">
-        <div class="row d-flex justify-content-between">
 
+<!-- body with gif background and a banner in carousel format-->
           <!-- card containing depressing images with dad jokes -->
           <div class="card sadCard" style="width: 17rem;">
             <img src="depression.jpg" class="card-img-top" id="sadPic" alt="sad image">
@@ -45,7 +41,7 @@
             </div>  
           </div>
 
-          <!-- card containing hellfire gif -->
+          <!-- card containing creepy cat gif -->
           <div class="card gifCard" style="width: 17rem;">
           </div>
 
@@ -67,9 +63,19 @@
             <small id="emailHelp" class="form-text text-muted"></small>
             <button type="submit" class="btn btn-danger text-dark subscribeButton">SUBSCRIBE</button>
           </div>
-        </form>
+        </div>
+
+        <!-- card containing spotify player inside iframe -->
+        <div class="card angryMusicCard" id="spotify-player">
+          <iframe class="spotify-player" src="https://open.spotify.com/embed/album/72uIfTpATmO0f9AiIvxggo" width="350"
+            height="780" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
       </div>
     </div>
-    <script src="bad-vibes.js"></script>
-  </body>
+    <!-- link back to goodvibes page -->
+    <a href="index.html" class="btn btn-danger btn-sm" id="linkToGoodVibes">Back to GoodVibes</a>
+  </div>
+  <script src="bad-vibes.js"></script>
+</body>
+
 </html>

@@ -1,6 +1,3 @@
-
-
-
 const settings = {
   "async": true,
   "crossDomain": true,
@@ -8,95 +5,96 @@ const settings = {
   "method": "GET"
 }
 
+let quotes = [];
 
+///Returns random quotes from api
 function getRandomIndex(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-
-
-
-// $(function () {
-  const getFoxyQuote = function() {
-    $('#click-quote').html('Get me another!')   //need button text to change, button still on screen
-    $.get(settings).then(function (response) {
-      let data = JSON.parse(response);
-      let random = data[getRandomIndex(data.length)]
-      console.log(random);
-      console.log(random.text);
-      console.log(random.author)
-      let newFoxy = `<div class="carousel-item active">
-      <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
-      <div class="carousel-caption d-none d-md-block">
-      <button onclick="getFoxyQuote" type="button" class="btn btn-primary btn-lg" id="click-quote">Get me another!</button>
-      <p id="affirmation">${random.text}</p>
-      <p id="author">${random.author}</p>
-      </div>
-      </div>`
-      $('.carousel-inner').html("")
-      $('.carousel-inner').append(newFoxy) 
+///Sets space images from nasa api
+function getSpace() {
+  $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
+    .then(function (data2) {
+      const img = document.getElementsByTagName('img')[3];
+      console.log('data =', data2)
+      img.setAttribute('src', data2.url)
     });
+};
+
+///Sets cat image api attached to random quote card
+function getCats() {
+  $.get('http://aws.random.cat/meow')
+    .then(function (data2) {
+      const img = document.getElementsByTagName('img')[1];
+      console.log('data =', data2)
+      img.setAttribute('src', data2.file)
+    });
+};
+
+///Quotes that have no author will now print as Unknown instead of null
+function renderQuote(quoteData) {
+  $('#affirmation').text(quoteData.text)
+  if (quoteData.author == null) {
+    $("#author").text("Unknown");
   }
-  $('#click-quote').click(getFoxyQuote);
-// });
+  else {
+    $('#author').text(quoteData.author)
+
+  };
+  console.log(quoteData)
+}
+
+///Adds click function to quotes
+const getFoxyQuote = function () {
+  $('#click-quote').html('Get me another!')
+  let random = quotes[getRandomIndex(quotes.length)]
+  renderQuote(random);
+}
+
+///Adds Yoga translation to random quote api in the center card
+function quoteYoda() {
+  $('#click-quote').html('Try more you will!')
+  $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
+    .then(function (response3) {
+      console.log(response3);
+      console.log('this')
+      $('#yoda-text').text(response3.contents.translated)
+    })
+}
+
+/// 
+$(document).ready(() => {
+  $.get(settings).then(function (response) {
+    const data = JSON.parse(response);
+    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
+    console.log(data);
+    quotes = removeTrump
+    console.log(quotes);
+
+  });
+
+  $('#click-quote').click(function () {
+    getFoxyQuote();
+    getCats();
+    quoteYoda();
+  });
+
+  $('#space-quote').click(function () {
+    getSpace()
+  });
+
+  // chuck norris quote generator
+  let chuckNorris = "https://api.icndb.com/jokes/random";
+  $("#click-chuck").on("click", function () {
+    $("click-chuck").html("Chun Kuk Do!");
+    $.getJSON(chuckNorris, function (json) {
+      $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
+    });
+  });
+
+})
 
 
 
-
-
-
-  // if(data == null) {
-  //   data = [];
-  //   data.push(response);
-  //   data = JSON.stringify(response) //this is starter for saving a list of favorite quotes
-  //   console.log(data)
-  //   localStorage.setItem(data)
-
-//       });
-
-//chuck norris quote generator
-// $(document).ready(function() {
-//   let chuckNorris = "https://api.icndb.com/jokes/random";
-//   $("button").on("click", function(){
-//      $("button").html("Another amazing quote!");
-//      $.getJSON(chuckNorris, function(json) {
-//        $("#affirmation").html("<em>\""+json.value.joke+"\"</em>").addClass("animated bounceIn");
-//      });
-//       });
-  
-//     });
-
-
-
-
-
-
-
-
-
-
-
-//THIS API DOES NOT WORK
-// const settings = {
-//   "async": true,
-//   "crossDomain": true,
-//   "url": "https://www.affirmations.dev",  //throws error: Access to XMLHttpRequest at 'https://www.affirmations.dev/' from origin 'http://127.0.0.1:5500' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-//   "method": "GET"
-// }
-
-
-
-
-// $(function () {
-//   $('#click-quote').click(function () {
-//     console.log("You clicked!");
-//     $.ajax(settings).done(function (response) {
-//         const data = JSON.parse(response);
-//         console.log(data);
-//         $("#affirmation").text(data[0]);
-//         console.log("again")
-//       });
-
-//   });
-// });
 

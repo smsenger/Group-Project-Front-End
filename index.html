@@ -1,73 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>  <!-- for chuck norris quotes -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Feelin' Foxy!</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="index.css" rel="stylesheet" type="text/css" />
+  <!-- jquery js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <title>Good Vibes!</title>
 </head>
+
 <body>
-    
-  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7rl4c-jr7g0?autoplay=1" frameborder="0" 
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-  
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <!-- <ol class="carousel-indicators" id="middle-format">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1" ></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2" ></li>
-    </ol> -->
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="foxytest.jpg" class="d-block w-100" alt="foxy image">
-        <div class="carousel-caption d-none d-md-block">
-          <button type="button" class="btn btn-primary btn-lg" id="click-quote">Click for a quote!</button>
-          <p id="affirmation"></p>
-          <p id="author"></p>
+
+
+
+  <ul class="top-right nav justify-content-center" style="width: 100vw;">
+    <li class="nav-item">
+      <a href="https://www.boredpanda.com/topics/cute-puppies/?utm_source=google&utm_medium=organic&utm_campaign=organic"
+        class="nav-link active" target="_blank">Puppies!</a>
+    </li>
+    <li class="nav-item">
+      <a href="bad-vibes.html" class="nav-link active" target="_blank">Bad Vibes</a>
+    </li>
+    <li class="nav-item">
+      <a href="https://www.youtube.com/watch?v=vgQidVzdneE&t=94s" class="nav-link active" tabindex="-1"
+        aria-disabled="true" target="_blank">The
+        Coolest</a>
+    </li>
+    <li class="nav-item">
+
+      <form>
+        <div class="form-group" id="nav-container">
+          <input title="email" name="email" required class="form-control" id="exampleInputEmail1"
+            oninvalid="this.setCustomValidity('No, like this: something@something.com')" type="email"
+            class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Sign up to our daily email list!">
+          <small id="emailHelp" class="form-text text-muted" id="form-font"></small>
+          <button type="submit" class="btn btn-secondary btn-sm form-font">Submit</button>
+        </div>
+      </form>
+    </li>
+  </ul>
+
+  <div class="carousel-inner Container">
+    <div class="carousel-item active carousel-width">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="baloons.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-md-block head">
+            <h1 class="head-text">Good Vibes!</h1>
+            <p class="comment-text">Boost your mood in the positivity zone!</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="foxytest2.jpg" class="d-block w-100" alt="foxy image">
-        <div class="carousel-caption d-none d-md-block">
-          <button type="button" class="btn btn-primary btn-lg" id="click-quote">Click for a quote!</button>
-          <p id="affirmation"></p>
-          <p id="author"></p>
+
+      <div class="Container">
+        <div class="row d-flex justify-content-around position-row" id="myContainer">
+          <div class="card kittyCard" style="width: 18rem;">
+            <img src="kittyplaceholder.jpg" class="card-img-top" id="kittyPic" alt="foxy image">
+            <h5 class="card-title" id="author">Oscar Wilde</h5>
+            <p class="card-text" id="affirmation">Be yourself; everyone else is already taken.</p>
+            <button type="button" class="btn btn-outline-success btn-lg footer" id="click-quote">Click for a
+              quote!</button>
+          </div>
+
+
+          <div class="card yodaCard" style="width: 18rem;">
+            <img src="yoda.jpg" class="card-img-top" id="yodaPic" alt="yoda image">
+            <h5 class="yodish" id="translation">Yoda's version...</h5>
+            <p class="card-text" id="yoda-text">Yourself you should be. Taken everyone else is.</p>
+
+          </div>
+
+          <div class="card" id="spaceCard" style="width: 18rem; border-radius: 2em; margin-bottom: 2vh;">
+            <img src="spaceplaceholder.jpg" alt="space image" class="card-img-top" id="spaceImage" />
+            <p class="ml--3 space-place">The majesty of space... NASA's Astronomy Image of the Day</p>
+
+            <button type="button" class="btn btn-outline-success btn-lg footer" id="space-quote">Click for the
+              image!</button>
+          </div>
+
+
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="foxytest3.jpg" class="d-block w-100" alt="foxy image">
-        <div class="carousel-caption d-none d-md-block">
-          <button type="button" class="btn btn-primary btn-lg" id="click-quote">Click for a quote!</button>
-          <p id="affirmation"></p>
-          <p id="author"></p>
+
+      <div class="Container" style="margin-top: 0px;">
+        <div class="row d-flex justify-content-around position-row" id="myContainer">
+          <div id="wrapper-container">
+            <div class="card corner-wrapper" id="spotify-player">
+              <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/37i9dQZF1DWYBO1MoTDhZI"
+                width="320" height="750" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+          </div>
+
+          <div class="card beach-card" style="width: 18rem; border-radius: 2em; padding: 10px; height: 780px;">
+            <img src="goodvibes2.jpg" class="card-img-top" id="beach-pic" alt="beach image"
+              style="border-radius: 2em; padding: 10px; height: 100%; border-radius: 2em;">
+          </div>
+
+          <div class="card chuckCard" style="width: 18rem;">
+            <img src="chuck-norris.jpg" class="card-img-top" id="chuckPic" alt="chuck norris image">
+            <p class="card-text" id="chuck-text">Chuck Norris threw a grenade and killed 50 people. Then it exploded.
+            </p>
+            <button type="button" class="btn btn-outline-success btn-lg footer" id="click-chuck">Click for Chuck
+              Norris!</button>
+          </div>
+
         </div>
       </div>
-    </div>
-    <!-- <a class="carousel-control-prev" id="control-color" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
-  </div>
-  
-  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-  <script src="index.js"></script>
+
+      <script src="index.js"></script>
 </body>
+
 </html>
-
-
-
-
-<!-- youtube api key: AIzaSyCIJP7B8SAlg8RWVYGc4Eat85ZWayc7y_M -->
-

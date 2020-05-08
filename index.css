@@ -63,7 +63,8 @@ input[placeholder="Subscribe to our daily email!"] {
 #click-quote, 
 #space-quote, 
 #click-chuck, 
-#click-klingon {
+#click-yoda, 
+#click-wink {
     background-color: #41708c;
     color: white;
     font-weight: bold;
@@ -97,28 +98,40 @@ input[placeholder="Subscribe to our daily email!"] {
 #affirmation {
     height: 30%;
     overflow: scroll;
+    border-top: 2px solid black;
+    margin-top: .5vh;
     
 }
  
-.klingCard {
+#author {
+    margin-top: 1vh;
+}
+
+.yodaCard {
     height: 780px;
     border-radius: 2em;
     padding: 10px;
     margin-bottom: 2vh;
 }
 
-#kling-text{
+#yoda-text{
     height: 30%;
     overflow: scroll;
+    border-top: 2px solid black;
+    margin-top: .5vh;
     
 }
 
-#klingPic {
+#translation {
+    margin-top: 1vh;
+}
+
+#yodaPic {
     border-radius: 2em;
     height: 59.7%;
 }
 
-#click-klingon {
+#click-yoda {
         margin-top: 4vh;
 };
 
@@ -132,10 +145,11 @@ input[placeholder="Subscribe to our daily email!"] {
     border-radius: 2em;
     padding: 10px;
     height: 450px;
+    height: 59.7%;
 }
 
 .space-place {
-    height: 20%;
+    height: 29%;
 }
 
 #spotifyPlayer {
@@ -163,10 +177,12 @@ input[placeholder="Subscribe to our daily email!"] {
 #chuckPic {
     border-radius: 2em;
     height: 450px;
+    height: 59.7%;
 }
+
 #chuck-text {
-    height: 30%;
     overflow: scroll;
+    height: 40vh;
 }
 
 #click-chuck {
@@ -209,6 +225,10 @@ h5 {
 @media only screen and (max-width: 1050px) {
     .head-text {
         margin-bottom: 0px;
+    }
+
+    #myContainer {
+        margin-top: 0px;
     }
 }
 

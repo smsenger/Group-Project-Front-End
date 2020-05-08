@@ -41,63 +41,52 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
+
 const getFoxyQuote = function () {
   $('#click-quote').html('Get me another!')
   let random = quotes[getRandomIndex(quotes.length)]
   renderQuote(random);
 }
 
-function quoteKlingon () {
-  $('#click-klingon').html('Try more you will!')
-  $.get('https://api.funtranslations.com/translate/yoda.json')
-  // $.get(`https://api.funtranslations.com/translate/Klingon.json?text=${document.getElementById('affirmation').textContent}`)
-  .then(function(response3) {
-    console.log(response3);
-    console.log('this')
-    const data3 = JSON.parse(response3);
-    $('#klingon').text(data3.contents.translated)
-  })
+function quoteYoda() {
+  $('#click-quote').html('Try more you will!')
+  $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
+    .then(function (response3) {
+      console.log(response3);
+      console.log('this')
+      // const data3 = JSON.parse(response3);
+      $('#yoda-text').text(response3.contents.translated)
+    })
 }
 
+$(document).ready(() => {
+  $.get(settings).then(function (response) {
+    const data = JSON.parse(response);
+    const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
+    console.log(data);
+    quotes = removeTrump
+    console.log(quotes);
 
-// function startSong() {
-  //   document.querySelectorAll('button')[0].click();
-  //   document.querySelectorAll('button')[1].click();
-  // }
-  
-  $(document).ready(() => {
-    $.get(settings).then(function (response) {
-      const data = JSON.parse(response);
-      const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
-      console.log(data);
-      quotes = removeTrump
-      console.log(quotes);
-      
-    });
-    
+  });
+
   $('#click-quote').click(function () {
     getFoxyQuote();
     getCats();
-    // startSong();
+    quoteYoda();
   });
-
-  $('#click-klingon').click(function () {
-    quoteKlingon();
-  })
-
 
   $('#space-quote').click(function () {
     getSpace()
   });
-  
+
   // chuck norris quote generator
-    let chuckNorris = "https://api.icndb.com/jokes/random";
-    $("#click-chuck").on("click", function () {
-      $("click-chuck").html("Chun Kuk Do!");
-      $.getJSON(chuckNorris, function (json) {
-        $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
-      });
+  let chuckNorris = "https://api.icndb.com/jokes/random";
+  $("#click-chuck").on("click", function () {
+    $("click-chuck").html("Chun Kuk Do!");
+    $.getJSON(chuckNorris, function (json) {
+      $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
     });
+  });
 
 })
 

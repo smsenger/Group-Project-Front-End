@@ -54,7 +54,6 @@ function quoteYoda() {
     .then(function (response3) {
       console.log(response3);
       console.log('this')
-      // const data3 = JSON.parse(response3);
       $('#yoda-text').text(response3.contents.translated)
     })
 }

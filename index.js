@@ -14,7 +14,7 @@ function getRandomIndex(max) {
 function getSpace() {
   $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
     .then(function (data2) {
-      const img = document.getElementsByTagName('img')[2];
+      const img = document.getElementsByTagName('img')[3];
       console.log('data =', data2)
       img.setAttribute('src', data2.url)
     });
@@ -41,12 +41,6 @@ function renderQuote(quoteData) {
   console.log(quoteData)
 }
 
-// const getQuote = function () {
-//   $('#click-quote').html('Get me another!')
-//   let random = data[getRandomIndex(data.length)]
-//   renderQuote(random);
-// }
-
 
 const getFoxyQuote = function () {
   $('#click-quote').html('Get me another!')
@@ -54,10 +48,16 @@ const getFoxyQuote = function () {
   renderQuote(random);
 }
 
-// function startSong() {
-//   document.querySelectorAll('button')[0].click();
-//   document.querySelectorAll('button')[1].click();
-// }
+function quoteYoda() {
+  $('#click-quote').html('Try more you will!')
+  $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
+    .then(function (response3) {
+      console.log(response3);
+      console.log('this')
+      // const data3 = JSON.parse(response3);
+      $('#yoda-text').text(response3.contents.translated)
+    })
+}
 
 $(document).ready(() => {
   $.get(settings).then(function (response) {
@@ -70,27 +70,24 @@ $(document).ready(() => {
   });
 
   $('#click-quote').click(function () {
-    getFoxyQuote()
+    getFoxyQuote();
     getCats();
-    // startSong();
+    quoteYoda();
   });
-
 
   $('#space-quote').click(function () {
     getSpace()
   });
-  
+
   // chuck norris quote generator
-  $(document).ready(function () {
-    let chuckNorris = "https://api.icndb.com/jokes/random";
-    $("#click-chuck").on("click", function () {
-      $("click-chuck").html("Chun Kuk Do!");
-      $.getJSON(chuckNorris, function (json) {
-        $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
-      });
+  let chuckNorris = "https://api.icndb.com/jokes/random";
+  $("#click-chuck").on("click", function () {
+    $("click-chuck").html("Chun Kuk Do!");
+    $.getJSON(chuckNorris, function (json) {
+      $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
     });
-  
   });
+
 })
 
 

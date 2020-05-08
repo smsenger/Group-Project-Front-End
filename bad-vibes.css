@@ -23,6 +23,8 @@
   height: 780px;
   border-radius: 2em;
   padding: 10px;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 .gifCard {
@@ -40,11 +42,12 @@
   border-radius: 20px;
   transform: translateZ(0px);
   background-color: rgb(33, 21, 28);
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 #spotifyPlayer {
   border-radius: 3em;
-  margin-bottom: 2vh;
 }
 
 /* images inside card formatting */
@@ -80,6 +83,8 @@
 .emailForm {
   display: flex;
   margin-top: 50px;
+  align-content: center;
+  width: 80vw;
 }
 
 .emailTextBox {

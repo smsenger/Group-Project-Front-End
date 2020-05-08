@@ -155,26 +155,111 @@ h5 {
     text-align: left;
 }
 
-/* bad vibes */
+
+
+/* -----------------------------bad vibes style sheet--------------------------------------------------------- */
+.bodyBadVibes {
+    background-color: rgb(1, 1, 1);
+}
+/* container formatting */
 #myContainer2 {
-    margin-top: -50px;
+    margin-top: -30px;
     margin-bottom: 15vh;
     background-size: 100%;
 }
 
-.sadCard {
-    /* margin-left: 2vw; */
+/* cards layout formatting */
+.sadCard,
+.gifCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(33, 21, 28);
     height: 780px;
-    border: 2px solid black;
+    border: 5px rgb(31, 21, 28);
     border-radius: 2em;
 }
 
-.corner-wrapper2 {
+.angryMusicCard {
     display: block;
     overflow: hidden;
     width: 350px;
     height: 780px;
-    border-radius: 20px;
+    border-radius: 2em;
     transform: translateZ(0px);
-    border: 2px solid black;
+    border: 5px rgb(31, 21, 28);
+}
+
+/* images inside card formatting */
+#sadPic,
+#fireGif {
+    height: 400px;
+    border-radius: 2em;
+}
+
+/* texts inside card formatting */
+.jokeSetup {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+}
+
+.jokePunchline {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+    color: maroon;
+    margin: 5px;
+}
+
+.gifText,
+.gifTitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+    margin: 5px;
+}
+
+/* click button formatting */
+#click-quote2 {
+    background-color: rgb(220, 53, 69);
+    color: white;
+    font-weight: bold;
+    border-radius: 2em;
+}
+
+.button1,
+.button2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* email formatting */
+.emailForm {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    margin-top: 50px;
+}
+
+.emailTextBox {
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+
+.subscribeButton {
+    font-weight: bold;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+/* link formatting */
+#linkToGoodVibes {
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: black;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-left: 35%;
+    margin-right: 35%;
 }

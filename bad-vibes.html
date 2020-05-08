@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -8,7 +7,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="index.css" rel="stylesheet" type="text/css" />
+  <link href="bad-vibes.css" rel="stylesheet" type="text/css" />
   <!-- jquery js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- google fonts -->
@@ -16,40 +15,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
   <title>badVibesOnly</title>
 </head>
+  <body class=bodyBadVibes background="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif">
+    <!-- link back to goodvibes page -->
+    <ul class="top-right nav justify-content-center" style="width: 100vw;">
+      <li class="nav-item">
+    <a href="index.html" class="btn btn-secondary btn-lg btn-bloc" id="linkToGoodVibes">To Good Vibes</a>
+    </li>
+    <!-- body with gif background and a banner in carousel format-->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="badvibesheader.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block head"></div>
+      </div>
+    </div>
+
 
 <!-- body with gif background and a banner in carousel format-->
+          <!-- card containing depressing images with dad jokes -->
+          <div class="card sadCard" style="width: 17rem;">
+            <img src="depression.jpg" class="card-img-top" id="sadPic" alt="sad image">
+            <p class="card-text jokeSetup">Prepare to NOT be amused...</p>
+            <h5 class="card-title jokePunchline"></h5>
+            <div class="btn-group" role="group" arial-label="quote button">
+              <button type="button" class="btn btn-secondary text-dark button1" id="click-quote2">Dad's Worst</button>
+            </div>  
+          </div>
 
-<body class=bodyBadVibes background="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="badvibesheader.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-md-block head"></div>
-    </div>
-  </div>
+          <!-- card containing creepy cat gif -->
+          <div class="card gifCard" style="width: 17rem;">
+          </div>
 
-  <!-- container with cards and form -->
-  <div class="container">
-    <div class="Container" id="myContainer2">
-      <div class="row d-flex justify-content-between">
-
-        <!-- card containing depressing images with dad jokes -->
-        <div class="card sadCard" style="width: 22rem;">
-          <img src="depression.jpg" class="card-img-top" id="sadPic" alt="sad image">
-          <p class="card-text jokeSetup">Prepare to NOT be amused...</p>
-          <h5 class="card-title jokePunchline"></h5>
-          <div class="btn-group" role="group" arial-label="quote button">
-            <button type="button" class="btn btn-secondary text-dark button1" id="click-quote2">Dad's Worst</button>
+          <!-- card containing spotify player inside iframe -->
+          <div class="card angryMusicCard" id="spotify-player">
+            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/7ABD15iASBIpPP5uJ5awvq" width="320" height="750"
+            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
         </div>
 
-        <!-- card containing hellfire gif -->
-        <div class="card gifCard" style="width: 22rem;">
-          <img src="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif" class="card-img-top" id="fireGif"
-            alt="hellfire gif"></img>
-          <p class="card-text gifText">add text here</p>
-          <h5 class="card-title gifTitle">add title here</h5>
-          <div class="btn-group" role="group" arial-label="quote button">
-            <button type="button" class="btn btn-secondary text-dark button2" id="click-quote2">add button here</button>
+        <!-- subscribe form -->
+        <form>
+          <div class="form-group emailForm">
+            <!-- <label for="exampleInputEmail1" id="subscription">Subscribe for a more bad vibes</label> -->
+            <input title="email" name="email" required class="form-control" id="exampleInputEmail1"
+            oninvalid="this.setCustomValidity('No, like this: something@something.com')" type="email"
+            class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="To all tortured souls: enter email for more bad vibes.">
+            <small id="emailHelp" class="form-text text-muted"></small>
+            <button type="submit" class="btn btn-danger text-dark subscribeButton">SUBSCRIBE</button>
           </div>
         </div>
 
@@ -59,17 +71,6 @@
             height="780" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
       </div>
-
-      <!-- subscribe form -->
-      <form>
-        <div class="form-group emailForm">
-          <!-- <label for="exampleInputEmail1" id="subscription">Subscribe for a more bad vibes</label> -->
-          <input type="email" class="form-control emailTextBox" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email..">
-          <small id="emailHelp" class="form-text text-muted"></small>
-          <button type="submit" class="btn btn-danger text-dark subscribeButton">SUBSCRIBE</button>
-        </div>
-      </form>
     </div>
     <!-- link back to goodvibes page -->
     <a href="index.html" class="btn btn-danger btn-sm" id="linkToGoodVibes">Back to GoodVibes</a>

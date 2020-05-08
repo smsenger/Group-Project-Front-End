@@ -18,9 +18,9 @@
 
   <body class=bodyBadVibes background="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif">
     <!-- link back to goodvibes page -->
-    <ul class="top-right nav justify-content-left" style="width: 100vw;">
+    <ul class="top-right nav justify-content-center" style="width: 100vw;">
       <li class="nav-item">
-    <a href="index.html" class="btn btn-danger btn-sm" id="linkToGoodVibes">Back to GoodVibes</a>
+    <a href="index.html" class="btn btn-secondary btn-lg btn-bloc" id="linkToGoodVibes">To Good Vibes</a>
     </li>
     <!-- body with gif background and a banner in carousel format-->
     <div class="carousel-inner">
@@ -36,7 +36,7 @@
         <div class="row d-flex justify-content-between">
 
           <!-- card containing depressing images with dad jokes -->
-          <div class="card sadCard" style="width: 22rem;">
+          <div class="card sadCard" style="width: 17rem;">
             <img src="depression.jpg" class="card-img-top" id="sadPic" alt="sad image">
             <p class="card-text jokeSetup">Prepare to NOT be amused...</p>
             <h5 class="card-title jokePunchline"></h5>
@@ -46,18 +46,12 @@
           </div>
 
           <!-- card containing hellfire gif -->
-          <div class="card gifCard" style="width: 22rem;">
-            <img src="https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif" class="card-img-top" id="fireGif" alt="hellfire gif"></img>
-            <p class="card-text gifText">add text here</p>
-            <h5 class="card-title gifTitle">add title here</h5>
-            <div class="btn-group" role="group" arial-label="quote button">
-              <button type="button" class="btn btn-secondary text-dark button2" id="click-quote2">add button here</button>
-            </div>
+          <div class="card gifCard" style="width: 17rem;">
           </div>
 
           <!-- card containing spotify player inside iframe -->
           <div class="card angryMusicCard" id="spotify-player">
-            <iframe class="spotify-player" src="https://open.spotify.com/embed/album/72uIfTpATmO0f9AiIvxggo" width="350" height="780"
+            <iframe class="spotify-player" src="https://open.spotify.com/embed/playlist/7ABD15iASBIpPP5uJ5awvq" width="320" height="750"
             frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
           </div>
         </div>
@@ -66,7 +60,10 @@
         <form>
           <div class="form-group emailForm">
             <!-- <label for="exampleInputEmail1" id="subscription">Subscribe for a more bad vibes</label> -->
-            <input type="email" class="form-control emailTextBox" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email..">
+            <input title="email" name="email" required class="form-control" id="exampleInputEmail1"
+            oninvalid="this.setCustomValidity('No, like this: something@something.com')" type="email"
+            class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="To all tortured souls: enter email for more bad vibes.">
             <small id="emailHelp" class="form-text text-muted"></small>
             <button type="submit" class="btn btn-danger text-dark subscribeButton">SUBSCRIBE</button>
           </div>

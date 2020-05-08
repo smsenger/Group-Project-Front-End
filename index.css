@@ -46,7 +46,12 @@ input[placeholder="Subscribe to our daily email!"] {
 
 #myContainer {
     margin-top: -100px;
-    margin-bottom: 15vh;
+    margin-bottom: 2vh;
+    background-size: 100%;
+}
+
+#container2 {
+    margin-bottom: 2vh;
     background-size: 100%;
 }
 
@@ -100,8 +105,6 @@ input[placeholder="Subscribe to our daily email!"] {
     overflow: scroll;
     border-top: 2px solid black;
     margin-top: .5vh;
-    
-
 }
  
 #author {
@@ -119,8 +122,7 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 30%;
     overflow: scroll;
     border-top: 2px solid black;
-    margin-top: .5vh;
-    
+    margin-top: .5vh;  
 }
 
 #translation {
@@ -132,14 +134,11 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 59.7%;
 }
 
-#click-yoda {
-        margin-top: 4vh;
-};
-
 #spaceCard {
     height: 780px;
     border-radius: 2em;
     padding: 10px;
+    margin-bottom: 2vh;
 }
 
 #spaceImage {
@@ -150,12 +149,11 @@ input[placeholder="Subscribe to our daily email!"] {
 }
 
 .space-place {
-    height: 29%;
+    height: 31%;
 }
 
 #spotifyPlayer {
     border-radius: 3em;
-    margin-bottom: 2vh;
 }
 
 .corner-wrapper {
@@ -166,6 +164,7 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 780px;
     border-radius: 20px;
     transform: translateZ(0px);
+    margin-bottom: 2vh;
 }
 
 .chuckCard {
@@ -208,13 +207,13 @@ h5 {
     font-size: 45px;
 }
 
-
 .flexContainer {
     display: flex;
     justify-content: space-around;
 }
 
-@media only screen and (max-width: 1465px) {
+
+@media only screen and (max-width: 1485px) {
     .comment-text {
         display: none;
     }
@@ -224,46 +223,87 @@ h5 {
     }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1056px) {
     .head-text {
-        margin-bottom: 0px;
+        margin-bottom: 7vh;
+    }
+
+    #container2 {
+        margin-top: 400px;
     }
 }
 
-@media only screen and (max-width: 638px) {
+@media only screen and (max-width: 1024px) {
+    #myContainer {
+        margin-bottom: 2vh;
+        margin-top: 0vh;
+    }
+
+    .head-text {
+        margin-left: 13vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #nav-container {
+        display: none;
+    }
+
+    .head-text {
+        margin-left: 6vw;
+    }
+}    
+
+@media only screen and (max-width: 740px) {
     .head-text {
         font-size: 420%;
+        margin-left: 12vw;
+        margin-bottom: 1vh;
     }
 }
 
 
-@media only screen and (max-width: 515px) {
+@media only screen and (max-width: 604px) {
     .head-text {
         font-size: 320%;
     }
 }
 
-@media only screen and (max-width: 489px) {
-    #nav-container {
-        display: none;
+@media only screen and (max-width: 518px) {
+    .head-text {
+        margin-left: 4vw;
+    }
+
+    .beach-card {
+        margin-bottom: 2vh;
     }
 }
 
-@media only screen and (max-width: 385px) {
+@media only screen and (max-width: 414px) {
     .head-text {
         font-size: 280%;
     }
-}
 
-@media only screen and (max-width: 340px) {
-    .head-text {
-        font-size: 250%;
+    #myContainer {
+        margin-top: 0px;
     }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 364px) {
     .head-text {
         font-size: 220%;
+    }
+
+    #myContainer {
+        width: 300px;
+    }
+
+    #spotify-player {
+        width: 300px;
+    }
+
+    .spotify-player {
+        width: 280px;
     }
 }
 

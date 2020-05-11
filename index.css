@@ -44,15 +44,14 @@ input[placeholder="Subscribe to our daily email!"] {
     text-align: left;
 }
 
-#myContainer {
+.myContainer {
     margin-top: -100px;
     margin-bottom: 2vh;
     background-size: 100%;
 }
 
-#container2 {
-    margin-bottom: 2vh;
-    background-size: 100%;
+.container2 {
+    margin-top: 2vh;
 }
 
 .head-text {
@@ -166,7 +165,7 @@ input[placeholder="Subscribe to our daily email!"] {
     margin-bottom: 2vh;
 }
 
-.chuckCard {
+#chuckCard {
     padding: 10px;
     height: 780px;
     border-radius: 2em;
@@ -186,6 +185,10 @@ input[placeholder="Subscribe to our daily email!"] {
 
 #click-chuck {
     margin-top: 2vh;
+}
+
+#beach-card {
+    margin-bottom: 2vh;
 }
 
 .bottomContainer {
@@ -226,15 +229,15 @@ h5 {
     .head-text {
         margin-bottom: 7vh;
     }
-
-    #container2 {
-        margin-top: 20px;
-    }
 }
 
 @media only screen and (max-width: 1024px) {
-    #myContainer {
-        margin-bottom: 2vh;
+    .myContainer {
+     margin-bottom: 2vh;
+        margin-top: 0vh;
+    }
+
+    .container2 {
         margin-top: 0vh;
     }
 
@@ -255,11 +258,11 @@ h5 {
     }
 
     #container2 {
-        margin-top: 2px;
+        margin-bottom: 0px;
     }
 
-    #myContainer {
-        margin-bottom: 0px;
+    .myContainer {
+     margin-bottom: 0px;
     }
 }    
 
@@ -292,7 +295,11 @@ h5 {
         font-size: 280%;
     }
 
-    #myContainer {
+    .myContainer {
+     margin-top: 0px;
+    }
+
+    .container2 {
         margin-top: 0px;
     }
 }
@@ -302,27 +309,36 @@ h5 {
         font-size: 220%;
     }
 
-    #myContainer {
+    .myContainer,
+    .mycontainer2 {
         width: 300px;
     }
 
-    #myContainer, 
+    .mycontainer2 {
+        margin-left: 2vw;
+    }
+
+    .myContainer, 
     #container2 {
         margin-left: 8vw;
     }
     
-    #spotify-player {
+    #spotify-player, 
+    #chuck-card, 
+    #beach-card {
         width: 300px;
     }
 
-    .spotify-player {
+    .spotify-player, 
+    .beach-pic,
+    .chuckPic {
         width: 280px;
     }
 }
 
 @media only screen and (max-width: 322px) {
-    #myContainer, 
-    #myContainer2 {
+    .myContainer, 
+    .container2 {
         margin-left: 3vw;
     }
 }

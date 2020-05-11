@@ -2,6 +2,11 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+body, 
+html {
+  width: 100%;
+}
+
 .bodyBadVibes {
   background-color: rgb(1, 1, 1);
 }
@@ -16,6 +21,10 @@
 .top-container {
   margin-right: 2vw;
   margin-left: 2vw;
+}
+
+.bottom-container {
+  width: 100%;
 }
 
 /* cards layout formatting */
@@ -105,7 +114,8 @@
 }
 
 /* link formatting */
-#linkToGoodVibes {
+#linkToGoodVibes, 
+#linkToGoodVibes2 {
   font-weight: bold;
   color: white;
   background-image: url("https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif");
@@ -116,154 +126,8 @@
   border: 3px solid black;
 }
 
-@media only screen and (max-width: 1493px) {
-  #exampleInputEmail1 {
-    font-size: 17px;
-  }
-}
-
-@media only screen and (max-width: 1350px) {
-  #exampleInputEmail1 {
-    font-size: 15px;
-  }
-
-  .subscribeButton {
-    font-size: 13px;
-  }
-}
-
-@media only screen and (max-width: 1223px) {
-  #exampleInputEmail1 {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 1135px) {
-  #exampleInputEmail1 {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (max-width: 1008px) {
-  #exampleInputEmail1 {
-    font-size: 11px;
-  }
-
-  .subscribeButton {
-    font-size: 11px;
-    height: 3.7vh;
-  }
-}
-
-
-@media only screen and (max-width: 1016px) {
-  .emailForm {
-    width: 55vw;
-  }
-}
-
-@media only screen and (max-width: 964px) {
-  .emailForm {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 883px) {
-  .emailForm {
-    width: 65vw;
-  }
-}
-
-@media only screen and (max-width: 815px) {
-  .emailForm {
-    width: 75vw;
-  }
-}
-
-@media only screen and (max-width: 703px) {
-  .emailForm {
-    width: 85vw;
-  }
-}
-
-@media only screen and (max-width: 618px) {
-  .emailForm {
-    width: 88vw;
-  }
-
-  .subscribeButton {
-    height: 3.5vh;
-    width: 11vw;
-    padding-right: 12vw;
-  }
-}
-
-@media only screen and (max-width: 553px) {
-  .emailForm {
-    width: 88vw;
-  }
-
-  .subscribeButton {
-    height: 3.5vh;
-    width: 7vw;
-    padding-right: 11.5vw;
-    font-size: 9px;
-  }
-}
-
-@media only screen and (max-width: 487px) {
-  #exampleInputEmail1 {
-    font-size: 9px;
-  }
-
-  .subscribeButton {
-    height: 3.5vh;
-    width: 7vw;
-    padding-right: 14vw;
-    font-size: 9px;
-  }
-}
-
-@media only screen and (max-width: 460px) {
-  #exampleInputEmail1 {
-    font-size: 8px;
-  }
-}
-
-@media only screen and (max-width: 415px) {
- 
-  .subscribeButton {
-    height: 3.5vh;
-    width: 7vw;
-    padding-right: 17vw;
-    margin-left: 30vw;
-    font-size: 9px;
-  }
-
-  #exampleInputEmail1 {
-    font-size: 9px;
-  }
-
+@media only screen and (max-width: 1070px) {
   .emailForm {
     flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 320px) {
- 
-  .subscribeButton {
-    padding-right: 22vw;
-    padding-bottom: 3vh;
-    margin-left: 30vw;
-    font-size: 9px;
-  }
-
-  #exampleInputEmail1 {
-    font-size: 9px;
-  }
-
-  .emailForm {
-    flex-direction: column;
-    width: 100vw;
   }
 }

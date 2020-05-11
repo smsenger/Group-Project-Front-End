@@ -63,14 +63,14 @@ function quoteYoda() {
     })
 }
 
-/// 
+///line 70 filters out a particular author from the available authors
 $(document).ready(() => {
   $.get(settings).then(function (response) {
     const data = JSON.parse(response);
     const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
     console.log(data);
     quotes = removeTrump
-    console.log(quotes);
+    console.log(quotes);     
 
   });
 

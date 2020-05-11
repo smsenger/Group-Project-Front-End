@@ -2,6 +2,11 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
+body, 
+html {
+  width: 100%;
+}
+
 .bodyBadVibes {
   background-color: rgb(1, 1, 1);
 }
@@ -11,6 +16,15 @@
   margin-top: -30px;
   margin-bottom: 15vh;
   background-size: 100%;
+}
+
+.top-container {
+  margin-right: 2vw;
+  margin-left: 2vw;
+}
+
+.bottom-container {
+  width: 100%;
 }
 
 /* cards layout formatting */
@@ -84,23 +98,24 @@
   display: flex;
   margin-top: 50px;
   align-content: center;
-  width: 80vw;
+  width: 55vw;
 }
 
-.emailTextBox {
-  border-top-left-radius: 2em;
-  border-bottom-left-radius: 2em;
+#exampleInputEmail1 {
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
 }
 
 .subscribeButton {
   font-weight: bold;
-  border-top-right-radius: 2em;
-  border-bottom-right-radius: 2em;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;
   background-color: rgb(247, 4, 29);
 }
 
 /* link formatting */
-#linkToGoodVibes {
+#linkToGoodVibes, 
+#linkToGoodVibes2 {
   font-weight: bold;
   color: white;
   background-image: url("https://media.giphy.com/media/6wpHEQNjkd74Q/giphy.gif");
@@ -108,4 +123,11 @@
   margin-bottom: 10px;
   margin-top: 10px;
   width: 40vw;
+  border: 3px solid black;
+}
+
+@media only screen and (max-width: 1070px) {
+  .emailForm {
+    flex-direction: column;
+  }
 }

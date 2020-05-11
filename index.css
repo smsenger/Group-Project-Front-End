@@ -44,10 +44,14 @@ input[placeholder="Subscribe to our daily email!"] {
     text-align: left;
 }
 
-#myContainer {
+.myContainer {
     margin-top: -100px;
-    margin-bottom: 15vh;
+    margin-bottom: 2vh;
     background-size: 100%;
+}
+
+.container2 {
+    margin-top: 2vh;
 }
 
 .head-text {
@@ -100,8 +104,6 @@ input[placeholder="Subscribe to our daily email!"] {
     overflow: scroll;
     border-top: 2px solid black;
     margin-top: .5vh;
-    
-
 }
  
 #author {
@@ -119,8 +121,7 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 30%;
     overflow: scroll;
     border-top: 2px solid black;
-    margin-top: .5vh;
-    
+    margin-top: .5vh;  
 }
 
 #translation {
@@ -132,30 +133,25 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 59.7%;
 }
 
-#click-yoda {
-        margin-top: 4vh;
-};
-
 #spaceCard {
     height: 780px;
     border-radius: 2em;
     padding: 10px;
+    margin-bottom: 2vh;
 }
 
 #spaceImage {
     border-radius: 2em;
-    padding: 10px;
     height: 450px;
     height: 59.7%;
 }
 
 .space-place {
-    height: 29%;
+    height: 31%;
 }
 
 #spotifyPlayer {
     border-radius: 3em;
-    margin-bottom: 2vh;
 }
 
 .corner-wrapper {
@@ -166,9 +162,10 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 780px;
     border-radius: 20px;
     transform: translateZ(0px);
+    margin-bottom: 2vh;
 }
 
-.chuckCard {
+#chuckCard {
     padding: 10px;
     height: 780px;
     border-radius: 2em;
@@ -190,6 +187,10 @@ input[placeholder="Subscribe to our daily email!"] {
     margin-top: 2vh;
 }
 
+#beach-card {
+    margin-bottom: 2vh;
+}
+
 .bottomContainer {
     display: flex;
     justify-content: space-around;
@@ -208,13 +209,13 @@ h5 {
     font-size: 45px;
 }
 
-
 .flexContainer {
     display: flex;
     justify-content: space-around;
 }
 
-@media only screen and (max-width: 1465px) {
+
+@media only screen and (max-width: 1494px) {
     .comment-text {
         display: none;
     }
@@ -224,46 +225,121 @@ h5 {
     }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1056px) {
     .head-text {
-        margin-bottom: 0px;
+        margin-bottom: 7vh;
     }
 }
 
-@media only screen and (max-width: 638px) {
+@media only screen and (max-width: 1024px) {
+    .myContainer {
+     margin-bottom: 2vh;
+        margin-top: 0vh;
+    }
+
+    .container2 {
+        margin-top: 0vh;
+    }
+
+    .head-text {
+        margin-bottom: 2vh;
+    }
+
+}
+
+@media only screen and (max-width: 774px) {
+    #nav-container {
+        display: none;
+    }
+
     .head-text {
         font-size: 420%;
+        margin-bottom: 2vh;
+    }
+
+    #container2 {
+        margin-bottom: 0px;
+    }
+
+    .myContainer {
+     margin-bottom: 0px;
+    }
+}    
+
+@media only screen and (max-width: 740px) {
+    .head-text {
+        font-size: 420%;
+        margin-bottom: 1vh;
     }
 }
 
 
-@media only screen and (max-width: 515px) {
+@media only screen and (max-width: 616px) {
     .head-text {
         font-size: 320%;
     }
 }
 
-@media only screen and (max-width: 489px) {
-    #nav-container {
-        display: none;
+@media only screen and (max-width: 518px) {
+    .head-text {
+        margin-left: 4vw;
+    }
+
+    .beach-card {
+        margin-bottom: 2vh;
     }
 }
 
-@media only screen and (max-width: 385px) {
+@media only screen and (max-width: 414px) {
     .head-text {
         font-size: 280%;
     }
-}
 
-@media only screen and (max-width: 340px) {
-    .head-text {
-        font-size: 250%;
+    .myContainer {
+     margin-top: 0px;
+    }
+
+    .container2 {
+        margin-top: 0px;
     }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 364px) {
     .head-text {
         font-size: 220%;
+    }
+
+    .myContainer,
+    .mycontainer2 {
+        width: 300px;
+    }
+
+    .mycontainer2 {
+        margin-left: 2vw;
+    }
+
+    .myContainer, 
+    #container2 {
+        margin-left: 8vw;
+    }
+    
+    #spotify-player, 
+    #chuck-card, 
+    #beach-card {
+        width: 300px;
+    }
+
+    .spotify-player, 
+    .beach-pic,
+    .chuckPic {
+        width: 280px;
+    }
+}
+
+@media only screen and (max-width: 322px) {
+    .myContainer, 
+    .container2 {
+        margin-left: 3vw;
     }
 }
 

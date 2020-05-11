@@ -24,7 +24,7 @@ function getSpace() {
 
 ///Sets cat image api attached to random quote card
 function getCats() {
-  $.get('http://aws.random.cat/meow')
+  $.get('https://aws.random.cat/meow')
     .then(function (data2) {
       const img = document.getElementsByTagName('img')[1];
       console.log('data =', data2)

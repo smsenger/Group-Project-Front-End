@@ -1,6 +1,9 @@
 const settings = {
   "async": true,
   "crossDomain": true,
+  // "url": "theysaidso.p.rapidapi.com",
+  // "key": "18a00c2d13msh0c5a9153e4d4394p1c9b1ejsn45de6d8b8bc7",
+  // "url": "theysaidso.p.rapidapi.com/apod?api_key=18a00c2d13msh0c5a9153e4d4394p1c9b1ejsn45de6d8b8bc7"
   "url": "https://type.fit/api/quotes",
   "method": "GET"
 }
@@ -65,14 +68,15 @@ function quoteYoda() {
 
 ///line 70 filters out a particular author from the available authors
 $(document).ready(() => {
-  $.get(settings).then(function (response) {
-    const data = JSON.parse(response);
+  // $.get(settings).then(function (response) {
+  //   const data = JSON.parse(response);
+    
     const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
     console.log(data);
     quotes = removeTrump
     console.log(quotes);     
 
-  });
+  // });
 
   $('#click-quote').click(function () {
     getFoxyQuote();

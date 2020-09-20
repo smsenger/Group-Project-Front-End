@@ -32,6 +32,14 @@ function getCats() {
     });
 };
 
+//functioning chuck quote generator
+function quoteChuck() {
+  $.get('https://api.chucknorris.io/jokes/random')
+    .then(function (response5) {
+      document.getElementById('chuck-text').textContent = response5.value;
+    });
+}
+
 ///Quotes that have no author will now print as Unknown instead of null
 function renderQuote(quoteData) {
   $('#affirmation').text(quoteData.text)
@@ -58,7 +66,6 @@ function quoteYoda() {
   $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
     .then(function (response3) {
       console.log(response3);
-      console.log('this')
       $('#yoda-text').text(response3.contents.translated)
     })
 }
@@ -66,34 +73,39 @@ function quoteYoda() {
 ///line 70 filters out a particular author from the available authors
 $(document).ready(() => {
   $.get(settings).then(function (response) {
-    const data = JSON.parse(response);   
+    const data = JSON.parse(response);
     const removeTrump = data.filter(settingObj => settingObj.author != 'Donald Trump');
     console.log(data);
     quotes = removeTrump
-    console.log(quotes);     
+    console.log(quotes);
 
-  // });
+    // });
 
-  $('#click-quote').click(function () {
-    getFoxyQuote();
-    getCats();
-    quoteYoda();
-  });
-
-  $('#space-quote').click(function () {
-    getSpace()
-  });
-
-  // chuck norris quote generator
-  let chuckNorris = "https://api.icndb.com/jokes/random";
-  $("#click-chuck").on("click", function () {
-    $("click-chuck").html("Chun Kuk Do!");
-    $.getJSON(chuckNorris, function (json) {
-      $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
+    $('#click-quote').click(function () {
+      getFoxyQuote();
+      getCats();
+      quoteYoda();
     });
-  });
 
-})
+    $('#click-chuck').click(function () {
+      quoteChuck();
+    })
+
+    $('#space-quote').click(function () {
+      getSpace()
+    });
+
+    // chuck norris quote generator -- this one no longer works
+    // let chuckNorris = "https://api.chucknorris.io/jokes/random";
+    // $("#click-chuck").on("click", function () {
+    //   $("click-chuck").html("Chun Kuk Do!");
+    //   $.getJSON(chuckNorris, function (json) {
+    //     $("#chuck-text").html("<em>\"" + json.value.joke + "\"</em>").addClass("animated bounceIn");
+    //   });
+    // });
+
+  })
+});
 
 
 

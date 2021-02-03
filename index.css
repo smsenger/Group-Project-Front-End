@@ -146,6 +146,14 @@ input[placeholder="Subscribe to our daily email!"] {
     height: 59.7%;
 }
 
+/* #alt-image {
+    height: 780px;
+    border-radius: 2em;
+    padding: 10px;
+    margin-bottom: 2vh;
+    background-image: url('astronomy-alt.jpg');
+} */
+
 .space-place {
     height: 31%;
 }

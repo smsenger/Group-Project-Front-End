@@ -3,7 +3,7 @@ const settings = {
   "crossDomain": true,
   "url": "https://type.fit/api/quotes",
   "method": "GET"
-}
+};
 
 let quotes = [];
 
@@ -14,11 +14,11 @@ function getRandomIndex(max) {
 
 ///Sets space images from nasa api
 function getSpace() {
-  $.get('https://api.nasa.gov/planetary/apod?api_key=yhAGByOoN03Qq1qHf4S1IBX070g1Of5dMIrzjLdf')
+  $.get('https://api.nasa.gov/planetary/apod?api_key=Y0VfqGlfYTw4u15tRKXhy4LjWG17M7xZbeBEB1fG')
     .then(function (data2) {
       const img = document.getElementsByTagName('img')[3];
-      console.log('data =', data2)
-      img.setAttribute('src', data2.url)
+      console.log('data =', data2);
+      img.setAttribute('src', data2.url);
     });
 };
 
@@ -28,7 +28,7 @@ function getCats() {
     .then(function (data2) {
       const img = document.getElementsByTagName('img')[1];
       console.log('data =', data2)
-      img.setAttribute('src', data2.file)
+      img.setAttribute('src', data2.file);
     });
 };
 
@@ -42,12 +42,12 @@ function quoteChuck() {
 
 ///Quotes that have no author will now print as Unknown instead of null
 function renderQuote(quoteData) {
-  $('#affirmation').text(quoteData.text)
+  $('#affirmation').text(quoteData.text);
   if (quoteData.author == null) {
     $("#author").text("Unknown");
   }
   else {
-    $('#author').text(quoteData.author)
+    $('#author').text(quoteData.author);
 
   };
   console.log(quoteData)
@@ -55,18 +55,18 @@ function renderQuote(quoteData) {
 
 ///Adds click function to quotes
 const getFoxyQuote = function () {
-  $('#click-quote').html('Get me another!')
-  let random = quotes[getRandomIndex(quotes.length)]
+  $('#click-quote').html('Get me another!');
+  let random = quotes[getRandomIndex(quotes.length)];
   renderQuote(random);
 }
 
 ///Adds Yoga translation to random quote api in the center card
 function quoteYoda() {
-  $('#click-quote').html('Try more you will!')
+  $('#click-quote').html('Try more you will!');
   $.get(`https://api.funtranslations.com/translate/yoda.json?text=${document.getElementById('affirmation').textContent}`)
     .then(function (response3) {
       console.log(response3);
-      $('#yoda-text').text(response3.contents.translated)
+      $('#yoda-text').text(response3.contents.translated);
     })
 }
 
